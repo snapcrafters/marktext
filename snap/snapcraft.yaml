@@ -60,7 +60,7 @@ parts:
 apps:
   marktext:
     extensions: [gnome-3-38]
-    command: opt/MarkText/marktext
+    command: opt/MarkText/marktext --no-sandbox
     desktop: usr/share/applications/marktext.desktop
     environment:
       TMPDIR: $XDG_RUNTIME_DIR
