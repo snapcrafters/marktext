@@ -1,15 +1,86 @@
-name: my-snap-name # you probably want to 'snapcraft register <name>'
-version: '0.1' # just for humans, typically '1.2+git' or '1.3.2'
-summary: Single-line elevator pitch for your amazing snap # 79 char long summary
+name: marktext
+version: 0.17.1
+license: MIT
+icon: images/banner-logo.png
+summary: MarkText, a simple, elegant, cross-platform markdown editor.
 description: |
-  This is my-snap's description. You have a paragraph or two to tell the
-  most important story about your snap. Keep it under 100 words though,
-  we live in tweetspace and your description wants to look good in the snap
-  store.
+  MarkText is a cross-platform, next generation markdown editor that 
+  focuses on speed and usability. It has features such as:
 
-confinement: devmode # use 'strict' once you have the right plugs and slots
+  - Realtime preview (WYSIWYG) and a clean and simple interface to get a distraction-free writing experience.
+  - Support CommonMark Spec, GitHub Flavored Markdown Spec and selective support Pandoc markdown.
+  - Markdown extensions such as math expressions (KaTeX), front matter and emojis.
+  - Support paragraphs and inline style shortcuts to improve your writing efficiency.
+  - Output HTML and PDF files.
+  - Various themes: Cadmium Light, Material Dark etc.
+  - Various editing modes: Source Code mode, Typewriter mode, Focus mode.
+  - Paste images directly from clipboard.
+
+  Completely free and open-source forever.
+
+base: core20
+grade: devel
+confinement: strict
+
+architectures:
+  - build-on: amd64
 
 parts:
-  my-part:
-    # See 'snapcraft plugins'
+  bsi-trigger: # A non-built part, only used to trigger builds in build.snapcraft.io on upstream changes
     plugin: nil
+    source: https://github.com/marktext/marktext.git
+  
+  marktext:
+    plugin: dump
+    source: 
+      - on amd64: https://github.com/marktext/marktext/releases/download/v$SNAPCRAFT_PROJECT_VERSION/marktext-amd64.deb
+    source-type: deb
+    override-build: |
+      snapcraftctl build
+      sed -i 's|Icon=marktext|Icon=/usr/share/icons/hicolor/256x256/apps/marktext\.png|' ${SNAPCRAFT_PART_INSTALL}/usr/share/applications/marktext.desktop
+    stage-packages:
+      - libnspr4
+      - libnss3
+      - libx11-dev 
+      - libxkbfile-dev 
+      - libsecret-1-dev 
+      - libfontconfig-dev
+    prime:
+      - -opt/MarkText/chrome-sandbox
+    
+  cleanup:
+    after: [marktext]
+    plugin: nil
+    build-snaps: [gnome-3-38-2004]
+    override-prime: |
+      set -eux
+      cd /snap/gnome-3-38-2004/current
+      find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/{} \;
+
+apps:
+  marktext:
+    extensions: [gnome-3-38]
+    command: opt/MarkText/marktext --no-sandbox
+    desktop: usr/share/applications/marktext.desktop
+    environment:
+      TMPDIR: $XDG_RUNTIME_DIR
+    plugs:
+      - shmem
+      - gsettings
+      - home
+      - login-session-observe
+      - network
+      - network-bind
+      - opengl
+      - pulseaudio
+      - audio-playback
+      - audio-record
+      - removable-media
+      - screen-inhibit-control
+      - unity7
+      - camera
+
+plugs:
+  shmem:
+    interface: shared-memory
+    private: true
