@@ -1,7 +1,7 @@
 name: marktext
 version: 0.17.1
 license: MIT
-icon: images/banner-logo.png
+icon: images/logo.png
 summary: MarkText, a simple, elegant, cross-platform markdown editor.
 description: |
   MarkText is a cross-platform, next generation markdown editor that 
