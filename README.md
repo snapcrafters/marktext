@@ -10,10 +10,10 @@ distributions.</p>
 
 
 <p align="center">
-<a href="https://snapcraft.io/my-snap-name">
+<a href="https://snapcraft.io/marktext">
   <img alt="enpass" src="https://snapcraft.io/marktext/badge.svg" />
 </a>
-<a href="https://snapcraft.io/my-snap-name">
+<a href="https://snapcraft.io/marktext">
   <img alt="enpass" src="https://snapcraft.io/marktext/trending.svg?name=0" />
 </a>
 </p>
@@ -25,7 +25,7 @@ distributions.</p>
 
 ## Install
 
-    sudo snap install marktext --beta
+    sudo snap install marktext
 
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/marktext)
