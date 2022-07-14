@@ -19,7 +19,7 @@ description: |
   Completely free and open-source forever.
 
 base: core20
-grade: devel
+grade: stable
 confinement: strict
 
 architectures:
