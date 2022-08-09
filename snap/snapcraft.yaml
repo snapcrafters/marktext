@@ -21,6 +21,7 @@ description: |
 base: core20
 grade: stable
 confinement: strict
+compression: lzo
 
 architectures:
   - build-on: amd64
@@ -68,17 +69,12 @@ apps:
       - shmem
       - gsettings
       - home
-      - login-session-observe
       - network
-      - network-bind
       - opengl
-      - pulseaudio
-      - audio-playback
-      - audio-record
       - removable-media
-      - screen-inhibit-control
       - unity7
-      - camera
+      - wayland
+      - x11
 
 plugs:
   shmem:
