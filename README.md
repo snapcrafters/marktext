@@ -33,55 +33,10 @@ distributions.</p>
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
-## Remaining tasks
-
-Snapcrafters ([join us](https://forum.snapcraft.io/t/snapcrafters-reboot/24625)) are working to land snap install documentation and the [snapcraft.yaml](https://github.com/snapcrafters/fork-and-rename-me/blob/master/snap/snapcraft.yaml) upstream so [Project] can authoritatively publish future releases.
-
-  - [x] Click the green "Use this template" button above to create a new repository based on this template
-  - [x] Give the newly created repository a sensible name, like `godzilla` if you're snapping the Godzilla software (*Note: Do not use `snap` in this name.*)
-  - [x] Update the description of the repository to `Unofficial snap for [Project]`
-  - [x] Update logos and references to `[Project]` and `[my-snap-name]`
-  - [X] Create a snap that runs in `devmode`
-  - [X] Convert the snap to `strict` confinement, or `classic` confinement if it qualifies
-  - [X] Register the snap in the store, **using the preferred upstream name**
-  - [X] Add a screenshot to this `README.md`
-  - [X] Add install instructions to this `README.md`
-  - [X] Update snap store metadata, icons and screenshots
-  - [X] Publish the confined snap in the Snap store beta channel
-  - [X] Update the install instructions in this `README.md`
-  - [X] Post a call for testing in the Snapcraft Forum ["Snapcrafters" category](https://forum.snapcraft.io/c/snapcrafters/23) - [link]()
-  - [X] Add the Snapcraft store account (snap-advocacy@canonical.com) as a collaborator to your snap in the [Dashboard](https://dashboard.snapcraft.io) and ask a [Snapcrafters admin](https://github.com/orgs/snapcrafters/people?query=%20role%3Aowner) to accept this request
-  - [X] Fix all important issues found during testing
-  - [X] Make a post in the Snapcraft Forum ["store-requests" category](https://forum.snapcraft.io/c/store-requests/19) asking for a transfer of the snap name from you to Snapcrafters - [link]()
-  - [X] Ask a [Snapcrafters admin](https://github.com/orgs/snapcrafters/people?query=%20role%3Aowner) to fork your repo into github.com/snapcrafters, and configure the repo for automatic publishing into edge on commit
-  - [X] Add the provided Snapcraft build badge to this `README.md`
-  - [X] Publish the snap in the Snap store stable channel
-  - [X] Update the install instructions in this `README.md`
-  - [X] Post an announcement in the Snapcraft Forum ["Snapcrafters" category](https://forum.snapcraft.io/c/snapcrafters/23) - [link]()
-  - [ ] Ask the Snap Advocacy team to celebrate the snap - [link]()
-  - [ ] Submit a pull request or patch upstream that adds snap install documentation - [link]()
-  - [ ] Ask upstream if they are interested in maintaining the Snap. If they are:
-    - [ ] Fork the upstream project, add the snap build files and required assets/launchers to that repo and submit a pull request or patch - [link]()
-    - [ ] Add upstream contact information to the `README.md`
-    - If upstream accept the PR:
-      - [ ] Request upstream create a Snap store account
-      - [ ] Add upstream account as a collaborator on the snap
-      - [ ] Contact the Snap Advocacy team to request the snap be transferred to upstream
-
-If you have any questions, [post in the Snapcraft forum](https://forum.snapcraft.io).
-
+> The upstream marktext repository/alternative downloads can be located [here](https://github.com/marktext/marktext).
 
 ## The Snapcrafters
 
 | [![Jason C. Nucciarone](https://s.gravatar.com/avatar/00c5a27b2478f8194fcd3221f8be7463?s=128)](https://github.com/NucciTheBoss/) |
 | :---: |
 | [Jason C. Nucciarone](https://github.com/NucciTheBoss/) |
-
-
-<!-- Uncomment and modify this when you have upstream contacts
-## Upstream
-
-| [![Upstream Name](https://gravatar.com/avatar/bc0bced65e963eb5c3a16cab8b004431?s=128)](https://github.com/upstreamname) |
-| :---: |
-| [Upstream Name](https://github.com/upstreamname) |
--->
