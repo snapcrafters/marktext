@@ -1,17 +1,21 @@
 name: 🧪 Test snap can be built on x86_64
 
 on:
+  workflow_dispatch:
+
   push:
-    branches: [ master ]
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
-    
+    branches:
+      - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - uses: snapcore/action-build@v1
         id: build
