@@ -1,5 +1,5 @@
 name: marktext
-version: 0.17.1
+version: 0.21.2
 license: MIT
 icon: images/logo.png
 summary: MarkText, a simple, elegant, cross-platform markdown editor.
@@ -30,7 +30,7 @@ parts:
   marktext:
     plugin: dump
     source:
-      - on amd64: https://github.com/marktext/marktext/releases/download/v$SNAPCRAFT_PROJECT_VERSION/marktext-amd64.deb
+      - on amd64: https://github.com/marktext/marktext/releases/download/v$SNAPCRAFT_PROJECT_VERSION/marktext-linux-$SNAPCRAFT_PROJECT_VERSION.deb
     source-type: deb
     override-build: |
       craftctl default
